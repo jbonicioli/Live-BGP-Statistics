@@ -1,0 +1,55 @@
+<?php
+/*-----------------------------------------------------------------------------
+* Live PHP Statistics                                                         *
+*                                                                             *
+* Main Author: Vaggelis Koutroumpas vaggelis@koutroumpas.gr                   *
+* (c)2008-2014 for AWMN                                                       *
+* Credits: see CREDITS file                                                   *
+*                                                                             *
+* This program is free software: you can redistribute it and/or modify        *
+* it under the terms of the GNU General Public License as published by        * 
+* the Free Software Foundation, either version 3 of the License, or           *
+* (at your option) any later version.                                         *
+*                                                                             *
+* This program is distributed in the hope that it will be useful,             *
+* but WITHOUT ANY WARRANTY; without even the implied warranty of              *
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the                *
+* GNU General Public License for more details.                                *
+*                                                                             *
+* You should have received a copy of the GNU General Public License           *
+* along with this program. If not, see <http://www.gnu.org/licenses/>.        *
+*                                                                             *
+*-----------------------------------------------------------------------------*/
+
+// MAIN SYSTEM CONFIGURATION
+
+// Database configuration
+$CONF['db_host']    = "localhost";
+$CONF['db_user']    = "";
+$CONF['db_pass']    = "";
+$CONF['db']         = "";
+
+// PHP Looking Glass NG Database configuration
+$CONF['db2_host']    = "localhost";
+$CONF['db2_user']    = "";
+$CONF['db2_pass']    = "";
+$CONF['db2']         = "";
+
+//Some defaults
+$CONF['GMAP_ENABLED'] = true; 
+$CONF['GMAP_DEFAULT_LAT'] = '39.0000'; // Google Maps Default Latitude
+$CONF['GMAP_DEFAULT_LON'] = '22.0000'; // Google Maps Default Longitude
+$CONF['GMAP_DEFAULT_ZOOM'] = '6'; // Google Maps Default Zoom
+
+$CONF['APP_NAME'] = 'Live BGP Statistics'; // System Application Title
+$CONF['ADMIN_ITEMS_PER_PAGE'] = 20; // Default results per page
+
+$CONF['WIND_DOMAIN'] = 'wind.awmn.net'; // WiND - Wireless Node Database Domain 
+$CONF['SIDEBAR_BGP_LG_NG_URL'] = '<a href="http://www.routers.awmn" target="_blank">www.routers.awmn</a>'; // Leave empty or set to FALSE to disable it.
+$CONF['SIDEBAR_SUPPORT_URL'] = '<a href="https://www.awmn.net/showthread.php?t=34364" target="_blank">Support</a>'; // Leave empty or set to FALSE to disable it.
+$CONF['BGP_LOOKING_GLASS_NG_DOMAIN'] = 'www.routers.awmn'; // The Domain on which BGP Looking Glass NG runs on. No HTML here.
+$CONF['FOOTER_TEXT'] = 'www.stats.awmn - 2008-'.date("Y").'. Developed by <a href="http://www.cha0s.awmn/" target="_blank">Cha0s #2331</a> for <a href="https://www.awmn/" target="_blank">AWMN</a>.';
+$CONF['WIRELESS_COMMUNITY_MAX_ASN'] = '22000'; // Maximum AS Number that's considered part of the wireless community for which this system runs for.
+$CONF['WIRELESS_COMMUNITY_NAME'] = 'AWMN'; // The name of the Wireless Community for which this system runs for.
+$CONF['BGP_COLLECT_MIN_ROUTERS'] = '10'; // Minimum routers live/healthy for BGP Collect daemon to start calculating.
+?>

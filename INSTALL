@@ -1,0 +1,43 @@
+Download Live BGP Statistics zip from GitHub and extract it to a web accessible folder.
+
+Create a MySQL database and import the db_schema.sql to create the system's tables.
+
+Copy includes/config.php.dist to includes/config.php and edit it appropriately.
+
+Make sure you install phpseclib http://phpseclib.sourceforge.net/ on your PHP's include path.
+It's needed for SSH2 access to MikroTik routers.
+
+
+Before using the system for the first time you should sync all WiND data to our database.
+Via shell run the following command:
+
+$ php /path/to/live-bgp-statistics/wind_import.php
+
+This will connect to the configured WiND database (on config.php) and it will fetch all the nodes from it to our database.
+Depending on the size of the WiND database and how fast its server is, this may take up to several hours.
+
+You should run wind_import.php periodically to fetch any newly added nodes.
+At the moment each run will fetch everything from scratch so use it carefully as it will first truncate the whole nodes table and then populate it from the begginning.
+
+
+This system will use the registered routers of BGP Looking Glass NG to connect to them periodically and fetch the BGP tables.
+If you have configured enough routers on BGP Looking Glass you may run the bgpcollect.php script to start collecting data.
+
+Via shell run the following command to start the bgpcollect.php script
+
+$ screen -dmS stats /usr/bin/php /path/to/live-bgp-statistics/bgpcollect.php
+
+It will start looping through all configured routers fetching their BGP tables.
+At any time you can close the terminal. The script will continue to run in the background indefinitely.
+If you wish to see the output of the script at a later time reconnect to the terminal and run:
+
+$ screen -r -d stats
+
+
+Currently the bgpcollect.php script supports Quagga and MikroTik Routers.
+For Quagga read only telnet access to the bgpd daemon is required.
+For MikroTik read only ssh access to the router is required.
+
+
+To create a custom dashboard page copy dashboard.php.dist to dashboard.php and put your own content.
+To change the logo on the top right upload your own logo on images/logo.custom.png with dimensions 326x81 pixels.

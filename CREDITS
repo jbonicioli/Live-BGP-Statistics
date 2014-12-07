@@ -1,0 +1,12 @@
+Main Author: Vaggelis Koutroumpas (vaggelis _at_ koutroumpas.gr)
+Based on the original idea of acoul/OZOnet @ AWMN
+
+Also used code and libraries from:
+jQuery Library http://jquery.com/
+jQuery-UI Library http://jqueryui.com/
+jQuery Tipsy http://onehackoranother.com/projects/jquery/tipsy/
+jQuery Gmap3 http://gmap3.net/
+phpseclib http://phpseclib.sourceforge.net/
+PHP Simple HTML DOM Parser http://sourceforge.net/projects/simplehtmldom/
+All icons used are in the public domain http://www.iconfinder.com
+Parts of code for processing the BGP prefix list output were borrowed from Nister's BGPMap @ AWMN.

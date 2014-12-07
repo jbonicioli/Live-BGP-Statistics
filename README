@@ -1,0 +1,33 @@
+Live BGP Statistics
+                                         
+This system is complementary to PHP Looking Glass NG. It cannot work on its own.
+It's intended to be used for troubleshooting and visualization of Wireless Community Networks using BGP for their backbone routing.
+It's not tested on the full internet BGP table. Probably it won't work properly since it's not optimized for such large BGP tables.
+
+It uses the routers database from PHP Looking Glass NG to connect to each router and periodically fetch the whole BGP routing table.
+It then calculates all the BGP Peers for each AS on the network and shows them in easy to interpret representation.
+Currently only Quagga and Mikrotik routers are supported.
+
+
+It also lists all the collected data in searchable tables for easier network troubleshooting.
+
+And by consulting the WiND Database it will create a list of illegally announced prefixes on the network.
+
+
+Requirements:
+
+PHP Looking Glass NG https://github.com/cha0sgr/php-looking-glass-ng
+WiND https://github.com/wind-project/wind
+Tested on Ubuntu and Fedora. It should work just fine on any other distro as well.
+PHP 5.2+
+MySQL 5.1+
+phpseclib ://phpseclib.sourceforge.net/
+Shell Access (to run the bgpcollect.php script)
+GNU screen (to keep running the bgpcollect.php script and still have access to its output for troubleshooting)                                      
+
+
+See CREDITS for other software used in this system.
+
+See INSTALL for installation instructions.
+
+Check out http://stats.cha0s.gr to see it in action monitoring the AWMN network (www.awmn.net)
